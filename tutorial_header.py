@@ -32,11 +32,7 @@ class DFT:
                                 ,basis=self.basis
                                 ,verbose=verbose)
                         
-                        mol_sc=None
-                        if self.spin != 0:
-                                mol_sc=dft.UKS(mol)
-                        else:
-                                mol_sc=dft.RKS(mol)
+                        mol_sc=dft.UKS(mol)
                         mol_sc.xc=self.xc
                         mol_sc.level_shift=level_shift
                         mol_sc.conv_check=False
@@ -63,11 +59,7 @@ class DFT:
                                 ,basis=self.basis
                                 ,verbose=verbose)
                         
-                        mol_sc=None
-                        if self.spin != 0:
-                                mol_sc=dft.UKS(mol)
-                        else:
-                                mol_sc=dft.RKS(mol)
+                        mol_sc=dft.UKS(mol)
                         mol_sc.xc=self.xc
                         mol_sc.level_shift=level_shift
                         mol_sc.conv_check=False
@@ -76,11 +68,7 @@ class DFT:
                         mol_sc.diis=scf.ADIIS()
                         mol_sc.diis_space=40
                         
-                        mol_hf=None
-                        if self.spin != 0:
-                                mol_hf=scf.UHF(mol)
-                        else:
-                                mol_hf=scf.RF(mol)
+                        mol_hf=scf.UHF(mol)
                         mol_hf.diis=scf.ADIIS()
                         mol_hf.diis_space=40
                         mol_sc.conv_tol=1e-8
