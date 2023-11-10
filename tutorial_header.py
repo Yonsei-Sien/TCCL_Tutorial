@@ -80,7 +80,10 @@ class DFT:
                         if self.spin != 0:
                                 mol_hf=scf.UHF(mol)
                         else:
-                                mol_hf=scf.RHF(mol)
+                                mol_hf=scf.RF(mol)
+                        mol_hf.diis=scf.ADIIS()
+                        mol_hf.diis_space=40
+                        mol_sc.conv_tol=1e-8
                         mol_hf.kernel()
                         Dhf=mol_hf.make_rdm1()
                         Ehf=mol_sc.energy_tot(Dhf)
