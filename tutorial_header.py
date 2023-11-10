@@ -81,7 +81,6 @@ class DFT:
                                 mol_hf=scf.UHF(mol)
                         else:
                                 mol_hf=scf.RHF(mol)
-                        mol_hf.grids.level=4
                         mol_hf.kernel()
                         Dhf=mol_hf.make_rdm1()
                         Ehf=mol_sc.energy_tot(Dhf)
