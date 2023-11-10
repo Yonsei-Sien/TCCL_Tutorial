@@ -41,6 +41,10 @@ class DFT:
                         mol_sc.level_shift=level_shift
                         mol_sc.conv_check=False
                         mol_sc.max_cycle=max_cycle
+                        mol_sc.grids.level=4
+                        mol_sc.conv_tol=1e-8
+                        mol_sc.diis.scf.ADIIS()
+                        mol_sc.diis_space=40
 
                         Esc=mol_sc.kernel() * 627.509
 
@@ -67,12 +71,17 @@ class DFT:
                         mol_sc.xc=self.xc
                         mol_sc.level_shift=level_shift
                         mol_sc.conv_check=False
+                        mol_sc.grids.level=4
+                        mol_sc.conv_tol=1e-8
+                        mol_sc.diis.scf.ADIIS()
+                        mol_sc.diis_space=40
                         
                         mol_hf=None
                         if self.spin != 0:
                                 mol_hf=scf.UHF(mol)
                         else:
                                 mol_hf=scf.RHF(mol)
+                        mol_hf.grids.level=4
                         mol_hf.kernel()
                         Dhf=mol_hf.make_rdm1()
                         Ehf=mol_sc.energy_tot(Dhf)
