@@ -9,7 +9,7 @@ Energy Unit: kcal/mol
 '''
 
 class DFT:
-        def __init__(self, atom='', spin=0, charge=0, xc='r2scan', basis='def2qzvppd'):
+        def __init__(self, atom='', spin=0, charge=0, xc='r2scan', basis='def2-qzvppd'):
                 self.coord=atom
                 self.spin=spin
                 self.charge=charge
