@@ -38,7 +38,6 @@ class DFT:
                         mol_sc.conv_check=False
                         mol_sc.grids.level=4
                         mol_sc.conv_tol=1e-8
-                        mol_sc.diis=scf.ADIIS()
                         mol_sc.diis_space=40
                         mol_sc.max_cycle=max_cycle
 
@@ -65,7 +64,6 @@ class DFT:
                         mol_sc.conv_check=False
                         mol_sc.grids.level=4
                         mol_sc.conv_tol=1e-8
-                        mol_sc.diis=scf.ADIIS()
                         mol_sc.diis_space=40
                         
                         mol_hf=scf.UHF(mol)
