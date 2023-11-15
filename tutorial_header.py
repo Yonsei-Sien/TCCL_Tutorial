@@ -38,6 +38,7 @@ class DFT:
                         mol_sc.conv_check=False
                         mol_sc.grids.level=4
                         mol_sc.conv_tol=1e-8
+                        mol_sc.diis=scf.ADIIS()
                         mol_sc.diis_space=40
                         mol_sc.max_cycle=max_cycle
 
@@ -65,11 +66,15 @@ class DFT:
                         mol_sc.grids.level=4
                         mol_sc.conv_tol=1e-8
                         mol_sc.diis_space=40
+                        mol_sc.diis=scf.ADIIS()
+                        mol_sc.diis_space=40
                         
                         mol_hf=scf.UHF(mol).density_fit()
                         mol_hf.diis_space=40
                         mol_hf.conv_tol=1e-8
                         mol_hf.max_cycle=500
+                        mol_hf.diis=scf.ADIIS()
+                        mol_hf.diis_space=40
                         mol_hf.kernel()
                         Dhf=mol_hf.make_rdm1()
                         Ehf=mol_sc.energy_tot(Dhf)
