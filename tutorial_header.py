@@ -61,18 +61,18 @@ class DFT:
                         
                         mol_sc=dft.RKS(mol).density_fit() if mol.spin == 0 else dft.UKS(mol).density_fit()
                         mol_sc.xc=self.xc
+                        mol_sc.diis=scf.ADIIS()
+                        mol_sc.diis_space=40
                         mol_sc.level_shift=level_shift
                         mol_sc.conv_check=False
                         mol_sc.grids.level=4
                         mol_sc.conv_tol=1e-8
-                        mol_sc.diis=scf.ADIIS()
-                        mol_sc.diis_space=40
                         
                         mol_hf=scf.RHF(mol).density_fit() if mol.spin == 0 else scf.UHF(mol).density_fit()
-                        mol_hf.conv_tol=1e-8
-                        mol_hf.max_cycle=500
                         mol_hf.diis=scf.ADIIS()
                         mol_hf.diis_space=40
+                        mol_hf.max_cycle=500
+                        mol_hf.conv_tol=1e-8
                         
                         mol_hf.kernel()
                         Dhf=mol_hf.make_rdm1()
