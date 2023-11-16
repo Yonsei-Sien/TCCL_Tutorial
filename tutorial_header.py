@@ -51,7 +51,7 @@ class DFT:
 
 
 
-        def hf(self,level_shift=0,verbose=4):
+        def hf(self,level_shift=0,verbose=6):
                 if self.data_check():
                         mol=gto.M(atom=self.coord
                                 ,spin=self.spin
