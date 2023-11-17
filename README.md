@@ -5,7 +5,7 @@
   
 
 Thanks to E. Sim†, M. Lee, Y. Kim  
-Use 'PySCF' for operation, we just make it to class for easy-looking  
+Use 'PySCF' for operation
 
 First written in 16th. Sep. 2023.  
 Recent Update in 17th. Nov. 2023.  
