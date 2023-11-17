@@ -51,7 +51,7 @@ class DFT:
 
 
 
-        def hf(self,level_shift=0,verbose=6):
+        def hf(self,level_shift=0,verbose=4):
                 if self.data_check():
                         mol=gto.M(atom=self.coord
                                 ,spin=self.spin
@@ -71,6 +71,8 @@ class DFT:
                         mol_hf=scf.RHF(mol).density_fit() if mol.spin == 0 else scf.UHF(mol).density_fit()
                         mol_hf.diis=scf.ADIIS()
                         mol_hf.diis_space=40
+                        mol_hf.level_shift=level_shift
+                        mol_hf.conv_check=False
                         mol_hf.max_cycle=500
                         mol_hf.conv_tol=1e-8
                         mol_hf.direct_scf=True
