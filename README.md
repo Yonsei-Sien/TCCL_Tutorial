@@ -1,7 +1,7 @@
 # TCCL_Tutorial
 ### Files need for TCCL Tutorial Colaboratory
 
-> G. Kim*, E. Sim$^†$, Y. Kim, and M. Lee; TCCL Tutorial, (2023), GitHub repository, https://github.com/Yonsei-Sien/TCCL_Tutorial  
+> G. Kim*, E. Sim†, Y. Kim, and M. Lee; TCCL Tutorial, (2023), GitHub repository, https://github.com/Yonsei-Sien/TCCL_Tutorial  
   
 
 Thanks to E. Sim†, M. Lee, Y. Kim  
